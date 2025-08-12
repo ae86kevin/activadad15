@@ -23,24 +23,36 @@ def quick_sorterN(lista):
 seleccion = ""
 while seleccion != 0:
     print("\n1.Agregar participante")
-    print("2.MOstrar particiapantes por edad")
-    print("3.mostarr particiapantes por nombre")
-    print("0. salir")
-    seleccion = int(input())
+    print("2.Mostrar particiapantes por edad")
+    print("3.Mostarr particiapantes por nombre")
+    print("0.salir")
+
+    try:
+        seleccion = int(input())
+
+    except ValueError:
+        print("\nIngrese numero valido" )
+        continue
+
 
     match seleccion:
         case 1:
-            cantidad=int(input("\nIngrese la cantidad de participantes: "))
+            while True:
+                try:
+                   cantidad=int(input("\nIngrese la cantidad de participantes: "))
+                   break
             for i in range(cantidad):
                 print(f"\nIngrese los datos de participante {i+1}:")
                 dorsal=int(input("ingrese NO. dorsal: "))
                 participantes[dorsal]={}
-                participantes[dorsal]["nombre"]=input("Ingres el nombre: ")
-                participantes[dorsal]["edad"]=int(input("Ingrese la edad: "))
-                participantes[dorsal]["categoria"]=input("Ingrese la categoria: ")
+                participantes[dorsal]["nombre Y apellido"]=input("Ingres el nombre: ")
+                participantes[dorsal]["edad (utilize solo numeros)"]=int(input("Ingrese la edad: "))
+                participantes[dorsal]["Tipo de categoria: (M=master, A=adulto = J=Juvenil)"]=input("Ingrese la categoria: ")
 
 
             print("Participante registrada exitosamente")
+
+
 
         case 2:
             print("Participantes ordenados por nombre")
