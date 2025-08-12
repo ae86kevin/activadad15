@@ -41,11 +41,27 @@ while seleccion != 0:
                 try:
                    cantidad=int(input("\nIngrese la cantidad de participantes: "))
                    break
+                except ValueError:
+                    print("\nIngrese numero valido")
+
             for i in range(cantidad):
                 print(f"\nIngrese los datos de participante {i+1}:")
-                dorsal=int(input("ingrese NO. dorsal: "))
+                while True:
+                    try:
+                        dorsal=int(input("ingrese NO. dorsal: "))
+                        break
+                    except ValueError:
+                        print("\nIngrese numero valido")
+
+                print("Guardado...")
                 participantes[dorsal]={}
-                participantes[dorsal]["nombre Y apellido"]=input("Ingres el nombre: ")
+
+
+                while True:
+                    try:
+                        nombre=input("Ingrese nombre: ")
+                        if nombre:
+                            participantes[dorsal]["nombre Y apellido"]=input("Ingres el nombre: ")
                 participantes[dorsal]["edad (utilize solo numeros)"]=int(input("Ingrese la edad: "))
                 participantes[dorsal]["Tipo de categoria: (M=master, A=adulto = J=Juvenil)"]=input("Ingrese la categoria: ")
 
