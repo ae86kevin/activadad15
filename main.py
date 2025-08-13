@@ -46,27 +46,45 @@ while seleccion != 0:
 
             for i in range(cantidad):
                 print(f"\nIngrese los datos de participante {i+1}:")
+
                 while True:
                     try:
                         dorsal=int(input("ingrese NO. dorsal: "))
+                        if dorsal in participantes:
+                            print("No ya registrado")
+                            continue
                         break
                     except ValueError:
                         print("\nIngrese numero valido")
 
-                print("Guardado...")
-                participantes[dorsal]={}
 
+                while True:
+                        nombre=input("Ingrese nombre: ")
+                        if nombre:
+                            break
+                        else:
+                            print("\nIngrese nombre invalido")
 
                 while True:
                     try:
-                        nombre=input("Ingrese nombre: ")
-                        if nombre:
-                            participantes[dorsal]["nombre Y apellido"]=input("Ingres el nombre: ")
-                participantes[dorsal]["edad (utilize solo numeros)"]=int(input("Ingrese la edad: "))
-                participantes[dorsal]["Tipo de categoria: (M=master, A=adulto = J=Juvenil)"]=input("Ingrese la categoria: ")
+                        edad = int(input("Ingrese edad: "))
+                        if edad > 0:
+                            break
+                        else:
+                            print("\nIngrese edad invalido")
+                    except ValueError:
+                        print("\nIngrese edad invalido")
+
+                while True:
+                    categoria=input("Ingrese categoria:  (M=master, A=adulto, J=juvenil)")
+                    if categoria in ["M", "A", "J"]:
+                        break
+                    else:
+                        print("\nDeber ingresar M o A o J")
+
+            print("Participante ingresado correctamente")
 
 
-            print("Participante registrada exitosamente")
 
 
 
