@@ -37,6 +37,10 @@ while seleccion != 0:
 
     match seleccion:
         case 1:
+            salir = input("¿Desea volver al menú principal? (S/N): ").strip().upper()
+            if salir == "S":
+                continue
+
             while True:
                 try:
                    cantidad=int(input("\nIngrese la cantidad de participantes: "))
@@ -89,6 +93,10 @@ while seleccion != 0:
 
 
         case 2:
+            salir = input(" volver a l menu principal:  (S/N)").strip().upper()
+            if salir == "S":
+                continue
+
             print("Participantes ordenados por nombre")
             lista_participantes = list(participantes.items())
             participantes_ordenados = quic_sorter(lista_participantes)
@@ -100,6 +108,10 @@ while seleccion != 0:
 
 
         case 3:
+            salir = input(" volver a l menu principal:  (S/N)").strip().upper()
+            if salir == "S":
+                continue
+
             print("Participantes ordenados por edad")
             lista_participantes=list(participantes.items())
             participantes_ordenados = quic_sorter(lista_participantes)
